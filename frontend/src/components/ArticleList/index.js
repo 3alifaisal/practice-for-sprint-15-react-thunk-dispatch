@@ -16,11 +16,13 @@ const ArticleList = () => {
     <div>
       <h1>Article List</h1>
       <ol>
-        {articles.map(({ id, title }) => (
-          <li key={id}>
-            <NavLink to={`/article/${id}`}>{title}</NavLink>
-          </li>
-        ))}
+        {articles &&
+          Object.values(articles).length > 0 &&
+          Object.values(articles).map(({ id, title }) => (
+            <li key={id}>
+              <NavLink to={`/article/${id}`}>{title}</NavLink>
+            </li>
+          ))}
       </ol>
 
       <Switch>
